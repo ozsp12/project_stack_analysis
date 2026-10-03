@@ -13,7 +13,7 @@ The current work is deliberately descriptive and diagnostic. The first stage inv
 ## Data provenance
 
 <p align="justify">
-The primary public source is the <a href="https://data.stackexchange.com/">Stack Exchange Data Explorer (SEDE)</a>, which provides SQL access to public Stack Exchange data. Original exports are preserved in <code>data/raw/</code>; prepared datasets used directly by analyses are stored in <code>data/refined/</code>; and query definitions, source notes, and dataset documentation are kept in <code>data/metadata/</code>. The repository also retains the original Excel workbook <code>cumulative-answers-questions-stackexchange.xlsx</code> together with its CSV representation and the SQL query used to reproduce the dataset. The public schema is documented in the <a href="https://meta.stackexchange.com/questions/2677/database-schema-documentation-for-the-public-data-dump-and-sede">Stack Exchange database schema documentation</a>, and content licensing follows the <a href="https://stackoverflow.com/help/licensing">Stack Overflow licensing terms</a>.
+The primary public source is the <a href="https://data.stackexchange.com/">Stack Exchange Data Explorer (SEDE)</a>, which provides SQL access to public Stack Exchange data. Original exports are preserved in <code>data/raw/</code>; cleaned or prepared datasets are stored in <code>data/refined/</code>; datasets that have passed explicit provenance, schema, grain, coverage, and quality checks are promoted to <code>data/trusted/</code>; and query definitions, source notes, and dataset documentation are kept in <code>data/metadata/</code>. The complete data-layer policy and current dataset definitions are documented in <code>data/README.md</code>. The repository also retains the original Excel workbook <code>cumulative-answers-questions-stackexchange.xlsx</code> together with its CSV representation and the SQL query used to reproduce the dataset. The public schema is documented in the <a href="https://meta.stackexchange.com/questions/2677/database-schema-documentation-for-the-public-data-dump-and-sede">Stack Exchange database schema documentation</a>, and content licensing follows the <a href="https://stackoverflow.com/help/licensing">Stack Overflow licensing terms</a>.
 </p>
 
 ## Repository organization
@@ -23,8 +23,10 @@ The primary public source is the <a href="https://data.stackexchange.com/">Stack
 ├── data/
 │   ├── raw/                    # Original SEDE exports
 │   ├── refined/                # Prepared analytical datasets
-│   └── metadata/
-│       └── queries/            # SQL and query definitions
+│   ├── trusted/                # Validated canonical analytical datasets
+│   ├── metadata/
+│   │   └── queries/            # SQL and query definitions
+│   └── README.md               # Data-layer policy and dataset documentation
 ├── src/
 │   └── stage_01/               # Basic descriptive analysis
 ├── assets/
