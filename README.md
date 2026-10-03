@@ -1,19 +1,19 @@
 # Stack Analysis
 
 <p align="justify">
-This repository is a reproducible exploratory analysis of long-run activity on Stack Overflow and selected Stack Exchange communities. Its central objective is to understand how participation, question production, answering activity, user dynamics, tags, and other observable characteristics evolve over time, with particular attention to the pronounced decline in new Stack Overflow questions. The repository is organized as an analytical research project rather than as a manuscript: source data, metadata, staged Python code, notebooks, figures, and tables are kept separate so that each result can be traced back to its underlying data and reproduced independently.
+This repository is a reproducible exploratory analysis of long-run activity on Stack Overflow and selected Stack Exchange communities. Its central objective is to understand how participation, question production, answering activity, user dynamics, tags, and other observable characteristics evolve over time, with particular attention to the pronounced decline in new Stack Overflow questions. The repository is organized as an analytical research project rather than as a manuscript: source data, metadata, staged Python code, notebooks, figures, tables, and analysis artifacts are kept separate so that each result can be traced back to its underlying data and reproduced independently.
 </p>
 
 ## Research scope
 
 <p align="justify">
-The current work is deliberately descriptive and diagnostic. The first stage inventories the available datasets, inspects dataframe dimensions and column structure, measures missingness and duplicated rows, identifies temporal coverage, documents variable meanings, computes basic numerical summaries, and reproduces the cumulative unanswered-question series contained in the legacy Excel workbook. Later stages can build on this foundation with time-series decomposition, structural-break analysis, cross-site comparisons, user-cohort dynamics, tag-level analysis, and other quantitative investigations. The repository therefore treats the notebook as an inspection surface and the Python package under <code>src/</code> as the reusable analytical layer.
+The current work is deliberately descriptive and diagnostic. The first stage inventories the available datasets, inspects dataframe dimensions and column structure, measures missingness and duplicated rows, identifies temporal coverage, documents variable meanings, computes basic numerical summaries, and reproduces the cumulative unanswered-question series retained in the legacy Excel analysis workbook. Later stages can build on this foundation with time-series decomposition, structural-break analysis, cross-site comparisons, user-cohort dynamics, tag-level analysis, and other quantitative investigations. The repository therefore treats the notebook as an inspection surface and the Python code under <code>src/</code> as the reusable analytical layer.
 </p>
 
 ## Data provenance
 
 <p align="justify">
-The primary public source is the <a href="https://data.stackexchange.com/">Stack Exchange Data Explorer (SEDE)</a>, which provides SQL access to public Stack Exchange data. Original exports are preserved in <code>data/raw/</code>; cleaned or prepared datasets are stored in <code>data/refined/</code>; datasets that have passed explicit provenance, schema, grain, coverage, and quality checks are promoted to <code>data/trusted/</code>; and query definitions, source notes, and dataset documentation are kept in <code>data/metadata/</code>. The complete data-layer policy and current dataset definitions are documented in <code>data/README.md</code>. The repository also retains the original Excel workbook <code>cumulative-answers-questions-stackexchange.xlsx</code> together with its CSV representation and the SQL query used to reproduce the dataset. The public schema is documented in the <a href="https://meta.stackexchange.com/questions/2677/database-schema-documentation-for-the-public-data-dump-and-sede">Stack Exchange database schema documentation</a>, and content licensing follows the <a href="https://stackoverflow.com/help/licensing">Stack Overflow licensing terms</a>.
+The primary public source is the <a href="https://data.stackexchange.com/">Stack Exchange Data Explorer (SEDE)</a>, which provides SQL access to public Stack Exchange data. Original query outputs are preserved in <code>data/raw/</code>; deterministic transformations belong in <code>data/refined/</code>; datasets that have passed explicit provenance, schema, grain, coverage, and quality checks are promoted to <code>data/trusted/</code>; and query definitions and the machine-readable data catalog are kept in <code>data/metadata/</code>. The complete data-layer policy and current raw dataset inventory are documented in <code>data/README.md</code>. The legacy Excel analysis workbook is preserved separately in <code>assets/analysis/</code>, while its corresponding CSV is stored in <code>data/raw/</code> with the SQL query that generated it. The public schema is documented in the <a href="https://meta.stackexchange.com/questions/2677/database-schema-documentation-for-the-public-data-dump-and-sede">Stack Exchange database schema documentation</a>, and content licensing follows the <a href="https://stackoverflow.com/help/licensing">Stack Overflow licensing terms</a>.
 </p>
 
 ## Repository organization
@@ -21,15 +21,17 @@ The primary public source is the <a href="https://data.stackexchange.com/">Stack
 ```text
 .
 ├── data/
-│   ├── raw/                    # Original SEDE exports
-│   ├── refined/                # Prepared analytical datasets
+│   ├── raw/                    # Original SEDE query outputs
+│   ├── refined/                # Reproducibly transformed datasets
 │   ├── trusted/                # Validated canonical analytical datasets
 │   ├── metadata/
+│   │   ├── datasets.csv        # Column-level data catalog
 │   │   └── queries/            # SQL and query definitions
 │   └── README.md               # Data-layer policy and dataset documentation
 ├── src/
 │   └── stage_01/               # Basic descriptive analysis
 ├── assets/
+│   ├── analysis/               # Legacy or supporting analysis artifacts
 │   ├── figures/                # Figures generated by notebooks/scripts
 │   └── tables/                 # Tables generated by notebooks/scripts
 ├── bibliography/               # Research references
@@ -45,7 +47,7 @@ Analytical code is organized by research stage. Stage 01 contains the basic desc
 ## Stage 01 — basic descriptive analysis
 
 <p align="justify">
-The notebook <code>descriptive_analysis.ipynb</code> currently produces seven outputs. It first lists all analytical datasets and their storage layer, file format, and file size. It then summarizes all raw dataframes by row count, column count, missing cells, duplicated rows, approximate memory use, and inferred temporal coverage. A third output catalogs every raw-data column with its dtype, non-null count, missing count, cardinality, and a concise interpretation. The refined cumulative answers/questions dataset is subsequently inspected through its own structural overview, its nine-column data dictionary, and a numerical summary. The final output reproduces the Excel line chart comparing <em>Cumulative Unanswered Questions</em> with <em>Cumulative No Answers At All</em> over time.
+The notebook <code>descriptive_analysis.ipynb</code> currently produces seven outputs. It first lists all analytical datasets and their storage layer, file format, and file size. It then summarizes all raw dataframes by row count, column count, missing cells, duplicated rows, approximate memory use, and inferred temporal coverage. A third output catalogs every raw-data column with its dtype, non-null count, missing count, cardinality, and a concise interpretation. The cumulative answers/questions dataset is subsequently inspected through its structural overview, nine-column data dictionary, and numerical summary. The final output reproduces the legacy Excel line chart comparing <em>Cumulative Unanswered Questions</em> with <em>Cumulative No Answers At All</em> over time.
 </p>
 
 <p align="justify">
