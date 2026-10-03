@@ -1,0 +1,10 @@
+column,dtype,non_null,missing,unique,description
+MonthStart,str,118,0,118,First calendar day of the reference month.
+Month Year,str,118,0,118,Reference month used as the time axis in the original Excel chart.
+Cumulative Unanswered Questions,int64,118,0,114,Running number of questions that have neither an accepted answer nor a currently positive-scored answer.
+Cumulative No Answers At All,int64,118,0,109,Running number of questions that have never received any answer.
+New Questions,int64,118,0,108,Questions created during the reference month.
+Newly Answered Questions,int64,118,0,99,Questions that leave the unanswered state during the reference month.
+NewlyGotFirstAnswer,int64,118,0,104,Questions receiving their first answer during the reference month.
+NetChangeInUnanswered,int64,118,0,92,Monthly change in the unanswered-question stock: new questions minus newly answered questions.
+NetChangeInNoAnswersAtAll,int64,118,0,79,Monthly change in the no-answer stock: new questions minus questions receiving a first answer.

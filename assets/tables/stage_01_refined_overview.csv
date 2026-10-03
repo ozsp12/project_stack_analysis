@@ -1,0 +1,2 @@
+dataset,rows,columns,missing_cells,duplicated_rows,memory_mb,date_column,date_min,date_max
+cumulative-answers-questions-stackexchange.csv,118,9,0,0,0.022,MonthStart,2016-08-01,2026-05-01

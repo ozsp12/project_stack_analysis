@@ -1,0 +1,12 @@
+dataset,rows,columns,missing_cells,duplicated_rows,memory_mb,date_column,date_min,date_max
+History-Sum-By-Month-Per-Year-of-Votes-by-Tag.csv,92526,8,647682,0,16.279,,,
+all-db-names-from-db-system.csv,359,1,0,0,0.028,,,
+cumulative-unanswered-questions-per-month-since-2008.csv,310,8,0,0,0.039,MonthStart,2000-08-01,2026-05-01
+new-answers-per-day-since-2008.csv,8179,3,0,0,1.17,Date,2013-12-11,2026-05-14
+new-answers-per-month-since-2008.csv,300,3,0,0,0.043,Date,2013-12-01,2026-05-01
+new-question-activity-per-day-since-2008.csv,3891,2,0,0,0.312,Date,2013-12-11,2026-05-16
+new-question-activity-per-month-since-2008.csv,147,2,0,0,0.012,Date,2013-12-01,2026-05-01
+new-questions-per-day-by-sites-since-2008.csv,6499,22,0,0,1.512,Day,2008-07-31,2026-05-16
+tags-db.csv,2704,7,7338,0,0.3,,,
+user-metrics-by-site-by-month-all-time.csv,3280,44,709,0,1.534,CreationMonth,2008-07-01,2026-05-01
+user-static-metrics-by-several-site-all-time.csv,21,36,0,0,0.007,,,

@@ -1,0 +1,14 @@
+dataset,layer,format,size_mb
+History-Sum-By-Month-Per-Year-of-Votes-by-Tag.csv,raw,csv,6.822
+all-db-names-from-db-system.csv,raw,csv,0.009
+cumulative-unanswered-questions-per-month-since-2008.csv,raw,csv,0.017
+new-answers-per-day-since-2008.csv,raw,csv,0.302
+new-answers-per-month-since-2008.csv,raw,csv,0.011
+new-question-activity-per-day-since-2008.csv,raw,csv,0.1
+new-question-activity-per-month-since-2008.csv,raw,csv,0.004
+new-questions-per-day-by-sites-since-2008.csv,raw,csv,0.713
+tags-db.csv,raw,csv,0.109
+user-metrics-by-site-by-month-all-time.csv,raw,csv,1.322
+user-static-metrics-by-several-site-all-time.csv,raw,csv,0.008
+cumulative-answers-questions-stackexchange.csv,refined,csv,0.006
+cumulative-answers-questions-stackexchange.xlsx,refined,xlsx,0.111
