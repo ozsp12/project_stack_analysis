@@ -1,66 +1,63 @@
 # Data
 
 <p align="justify">
-The <code>data/</code> directory contains the datasets, source definitions, and provenance material used by the project. Its organization separates source preservation from analytical preparation and from datasets that have been explicitly validated for downstream use. The primary public source is the <a href="https://data.stackexchange.com/">Stack Exchange Data Explorer (SEDE)</a>, which provides SQL access to public Stack Exchange data. The corresponding public schema is documented in the <a href="https://meta.stackexchange.com/questions/2677/database-schema-documentation-for-the-public-data-dump-and-sede">Stack Exchange database schema documentation</a>. Files should move between data layers only through reproducible transformations, while source files in <code>raw/</code> remain unchanged.
+The <code>data/</code> directory contains the source datasets, reproducibility metadata, and the intermediate and validated data layers used by the project. The primary public source is the <a href="https://data.stackexchange.com/">Stack Exchange Data Explorer (SEDE)</a>. Original query outputs are kept in <code>raw/</code>; deterministic transformations may be written to <code>refined/</code>; datasets that have passed explicit provenance, schema, grain, coverage, and quality checks may be promoted to <code>trusted/</code>; and the SQL definitions and machine-readable data catalog are stored in <code>metadata/</code>. Raw files should remain unchanged after extraction so that every downstream result can be traced to its source.
 </p>
 
 ## Directory structure
 
 ```text
 data/
-├── raw/          # Original source exports, preserved without analytical modification
-├── refined/      # Cleaned or prepared datasets produced from source data
-├── trusted/      # Validated datasets approved as canonical analytical inputs
-└── metadata/
-    └── queries/  # SQL queries and source definitions associated with the datasets
+├── raw/                   # Original CSV exports from SEDE
+├── refined/               # Deterministically transformed datasets
+├── trusted/               # Validated canonical analytical datasets
+├── metadata/
+│   ├── datasets.csv       # Column-level data catalog
+│   └── queries/           # SQL/query definitions used to generate raw CSVs
+└── README.md
 ```
 
-## Raw data
+## Raw datasets
 
 <p align="justify">
-The <code>raw/</code> layer preserves the original exports used by the project. These files should be treated as immutable evidence of the source extraction and should not be manually corrected, reformatted, filtered, or overwritten. Most files are CSV exports produced from SEDE queries and retain the schema and granularity returned by the original query. Any issue discovered in a raw dataset should be documented in metadata and corrected in a downstream layer rather than by editing the original file.
+The <code>raw/</code> directory is the source layer of the project. Each CSV is paired with the SQL or query definition stored in <code>metadata/queries/</code>. The table below provides the direct repository link to each raw dataset and the corresponding query file used to produce it. Detailed column names, logical data types, column descriptions, table descriptions, query filenames, and CSV URLs are maintained in <a href="metadata/datasets.csv"><code>metadata/datasets.csv</code></a>.
 </p>
+
+| Raw CSV | Description | SEDE SQL / query |
+|---|---|---|
+| [`History-Sum-By-Month-Per-Year-of-Votes-by-Tag.csv`](raw/History-Sum-By-Month-Per-Year-of-Votes-by-Tag.csv) | Monthly vote metrics by tag. | [`History-Sum-By-Month-Per-Year-of-Votes-by-Tag.txt`](metadata/queries/History-Sum-By-Month-Per-Year-of-Votes-by-Tag.txt) |
+| [`all-db-names-from-db-system.csv`](raw/all-db-names-from-db-system.csv) | Stack Overflow and Stack Exchange database names exposed by SEDE. | [`all-db-names-from-db-system.txt`](metadata/queries/all-db-names-from-db-system.txt) |
+| [`cumulative-answers-questions-stackexchange.csv`](raw/cumulative-answers-questions-stackexchange.csv) | Monthly question-lifecycle series matching the legacy workbook schema. | [`cumulative-answers-questions-stackexchange.sql`](metadata/queries/cumulative-answers-questions-stackexchange.sql) |
+| [`cumulative-unanswered-questions-per-month-since-2008.csv`](raw/cumulative-unanswered-questions-per-month-since-2008.csv) | Monthly unanswered/no-answer question stocks and flows. | [`cumulative-unanswered-questions-per-month.txt`](metadata/queries/cumulative-unanswered-questions-per-month.txt) |
+| [`new-answers-per-day-since-2008.csv`](raw/new-answers-per-day-since-2008.csv) | Daily new-answer counts split by deletion status. | [`new-answers-per-day-since-2008.txt`](metadata/queries/new-answers-per-day-since-2008.txt) |
+| [`new-answers-per-month-since-2008.csv`](raw/new-answers-per-month-since-2008.csv) | Monthly new-answer counts split by deletion status. | [`new-answers-per-month-since-2008.txt`](metadata/queries/new-answers-per-month-since-2008.txt) |
+| [`new-question-activity-per-day-since-2008.csv`](raw/new-question-activity-per-day-since-2008.csv) | Daily new-question counts. | [`new-question-activity-per-day-since-2008.txt`](metadata/queries/new-question-activity-per-day-since-2008.txt) |
+| [`new-question-activity-per-month-since-2008.csv`](raw/new-question-activity-per-month-since-2008.csv) | Monthly new-question counts. | [`new-question-activity-per-month-since-2008.txt`](metadata/queries/new-question-activity-per-month-since-2008.txt) |
+| [`new-questions-per-day-by-sites-since-2008.csv`](raw/new-questions-per-day-by-sites-since-2008.csv) | Daily new-question counts across selected Stack Exchange communities and Stack Overflow. | [`new-questions-per-day-by-sites-since-2008.txt`](metadata/queries/new-questions-per-day-by-sites-since-2008.txt) |
+| [`tags-db.csv`](raw/tags-db.csv) | Snapshot of the SEDE <code>Tags</code> table. | [`tags-db.txt`](metadata/queries/tags-db.txt) |
+| [`user-metrics-by-site-by-month-all-time.csv`](raw/user-metrics-by-site-by-month-all-time.csv) | User metrics by site and account-creation month. | [`user-metrics-by-site-by-month-all-time.txt`](metadata/queries/user-metrics-by-site-by-month-all-time.txt) |
+| [`user-static-metrics-by-several-site-all-time.csv`](raw/user-static-metrics-by-several-site-all-time.csv) | Cross-site snapshot of aggregate user metrics. | [`user-static-metrics-by-several-site-all-time.txt`](metadata/queries/user-static-metrics-by-several-site-all-time.txt) |
 
 ## Refined data
 
 <p align="justify">
-The <code>refined/</code> layer contains datasets that have been prepared for direct analytical use but have not necessarily been promoted to the project's canonical trusted layer. Typical operations at this stage include explicit type conversion, date normalization, column naming, reshaping, aggregation, extraction from legacy workbooks, and other deterministic transformations that make source data easier to inspect and analyze. Every refined dataset should remain traceable to its raw source or reproducible query and should avoid undocumented manual corrections.
-</p>
-
-<p align="justify">
-The principal refined dataset currently stored here is <code>cumulative-answers-questions-stackexchange</code>, available as both the legacy Excel workbook and a CSV representation. The workbook contains one worksheet, <code>QueryResults</code>, with 118 monthly observations from August 2016 through May 2026 and nine variables. Its fields describe the monthly evolution of cumulative unanswered questions, questions with no answers at all, new questions, questions leaving the unanswered state, questions receiving their first answer, and the corresponding monthly net changes. The Excel workbook also contains the line chart reproduced by Stage 01 of the analysis. The SQL definition used to reconstruct this dataset is stored in <code>metadata/queries/cumulative-answers-questions-stackexchange.sql</code>.
+The <code>refined/</code> layer is reserved for datasets produced by explicit, deterministic transformations of raw data, such as type normalization, reshaping, joins, derived variables, aggregation, or reproducible cleaning. A refined dataset must remain traceable to its raw inputs and transformation code. The layer is currently empty; the former cumulative CSV was moved to <code>raw/</code> because it is itself a direct SEDE query result rather than a Python-generated transformation.
 </p>
 
 ## Trusted data
 
 <p align="justify">
-The <code>trusted/</code> layer is the final curated data layer. A dataset should be placed here only after its provenance, schema, grain, date coverage, missingness, duplicate behavior, variable semantics, and relevant consistency checks have been reviewed. Trusted datasets are intended to become the stable analytical inputs for later stages of the project, so scripts in <code>src/stage_02/</code> and subsequent stages should preferentially consume this layer when an equivalent validated dataset exists. Promotion from <code>refined/</code> to <code>trusted/</code> should therefore be deliberate and reproducible rather than automatic.
-</p>
-
-<p align="justify">
-The trusted layer is initially empty. This is intentional: the current Stage 01 work is descriptive and diagnostic, and its purpose is partly to establish which datasets are sufficiently well understood to be promoted. Future promotion should be accompanied by explicit validation rules or documented checks so that the meaning of "trusted" remains operational rather than merely organizational.
+The <code>trusted/</code> layer is reserved for datasets that have passed documented checks of provenance, schema, grain, temporal coverage, missingness, duplicates, and semantic consistency. These datasets are intended to become stable analytical inputs for later stages of the project. The layer is currently empty and promotion into it should be deliberate and reproducible.
 </p>
 
 ## Metadata
 
 <p align="justify">
-The <code>metadata/</code> directory contains information required to interpret, reproduce, and audit the datasets. Its <code>queries/</code> subdirectory stores the SQL or query text associated with SEDE exports, including the query that reconstructs the cumulative answers/questions dataset. Metadata should capture where a dataset came from, what entity and time grain it represents, how its fields should be interpreted, and any known limitations such as survivorship effects, snapshot semantics, query truncation, incomplete historical coverage, or site-specific scope. Dataset-specific caveats belong here rather than being hidden inside notebooks.
+The <code>metadata/</code> directory contains the information required to reproduce and interpret the data. The <code>queries/</code> subdirectory stores the SQL or query text associated with each raw CSV. The machine-readable catalog <a href="metadata/datasets.csv"><code>datasets.csv</code></a> contains one row per dataset column and records the table name, column name, logical column type, column description, query filename, table description, and direct GitHub URL of the CSV. Dataset-specific caveats, including snapshot semantics, current-score dependence, query limits, or incomplete historical coverage, should be documented here rather than hidden inside analysis notebooks.
 </p>
 
-## Refined cumulative dataset — variable definitions
-
-| Column | Meaning |
-|---|---|
-| `MonthStart` | First calendar day of the reference month. |
-| `Month Year` | Reference month used on the x-axis of the original Excel chart. |
-| `Cumulative Unanswered Questions` | Running number of questions with neither an accepted answer nor a currently positive-scored answer. |
-| `Cumulative No Answers At All` | Running number of questions that have never received an answer. |
-| `New Questions` | Questions created in the reference month. |
-| `Newly Answered Questions` | Questions leaving the unanswered state in the reference month. |
-| `NewlyGotFirstAnswer` | Questions receiving their first answer in the reference month. |
-| `NetChangeInUnanswered` | New questions minus questions leaving the unanswered state. |
-| `NetChangeInNoAnswersAtAll` | New questions minus questions receiving their first answer. |
+## Legacy analysis workbook
 
 <p align="justify">
-The original workbook chart uses <code>Month Year</code> as its time axis and plots <code>Cumulative Unanswered Questions</code> together with <code>Cumulative No Answers At All</code>. The same chart is reproduced by the Stage 01 analysis and persisted under <code>assets/figures/</code>.
+The Excel workbook formerly stored beside the cumulative CSV is an analysis artifact rather than a source dataset. It is preserved at <a href="../assets/analysis/cumulative-answers-questions-stackexchange.xlsx"><code>assets/analysis/cumulative-answers-questions-stackexchange.xlsx</code></a>. Its tabular content is represented separately by the raw CSV generated from the documented SEDE query.
 </p>
