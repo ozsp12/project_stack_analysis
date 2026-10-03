@@ -1,0 +1,137 @@
+dataset,column,dtype,non_null,missing,unique,description
+History-Sum-By-Month-Per-Year-of-Votes-by-Tag.csv,RowNumber,str,92526,0,92526,Dataset-specific field; inspect the paired query in data/metadata/queries.
+History-Sum-By-Month-Per-Year-of-Votes-by-Tag.csv,TagName,float64,0,92526,0,Tag or tag-related attribute from Stack Exchange.
+History-Sum-By-Month-Per-Year-of-Votes-by-Tag.csv,VoteMonth,float64,0,92526,0,Vote count or vote-related attribute.
+History-Sum-By-Month-Per-Year-of-Votes-by-Tag.csv,Upvotes,float64,0,92526,0,Vote count or vote-related attribute.
+History-Sum-By-Month-Per-Year-of-Votes-by-Tag.csv,Downvotes,float64,0,92526,0,Vote count or vote-related attribute.
+History-Sum-By-Month-Per-Year-of-Votes-by-Tag.csv,TotalVotes,float64,0,92526,0,Vote count or vote-related attribute.
+History-Sum-By-Month-Per-Year-of-Votes-by-Tag.csv,NetVotes,float64,0,92526,0,Vote count or vote-related attribute.
+History-Sum-By-Month-Per-Year-of-Votes-by-Tag.csv,UpvoteDownvoteRatio,float64,0,92526,0,Vote count or vote-related attribute.
+all-db-names-from-db-system.csv,DatabaseName,str,359,0,359,SEDE database or database-level identifier.
+cumulative-unanswered-questions-per-month-since-2008.csv,MonthStart,str,310,0,310,First calendar day of the reference month.
+cumulative-unanswered-questions-per-month-since-2008.csv,CumulativeUnansweredQuestions,int64,310,0,147,"Answer count, answer status, or answer-related metric."
+cumulative-unanswered-questions-per-month-since-2008.csv,CumulativeNoAnswersAtAll,int64,310,0,141,"Answer count, answer status, or answer-related metric."
+cumulative-unanswered-questions-per-month-since-2008.csv,NewQuestions,int64,310,0,137,"Question count, question status, or question-related metric."
+cumulative-unanswered-questions-per-month-since-2008.csv,NewlyAnsweredQuestions,int64,310,0,129,"Answer count, answer status, or answer-related metric."
+cumulative-unanswered-questions-per-month-since-2008.csv,NewlyGotFirstAnswer,int64,310,0,133,Questions receiving their first answer during the reference month.
+cumulative-unanswered-questions-per-month-since-2008.csv,NetChangeInUnanswered,int64,310,0,121,Monthly change in the unanswered-question stock: new questions minus newly answered questions.
+cumulative-unanswered-questions-per-month-since-2008.csv,NetChangeInNoAnswersAtAll,int64,310,0,108,Monthly change in the no-answer stock: new questions minus questions receiving a first answer.
+new-answers-per-day-since-2008.csv,Date,str,8179,0,4295,Date or datetime field.
+new-answers-per-day-since-2008.csv,Status,str,8179,0,2,Dataset-specific field; inspect the paired query in data/metadata/queries.
+new-answers-per-day-since-2008.csv,NewAnswers,int64,8179,0,169,"Answer count, answer status, or answer-related metric."
+new-answers-per-month-since-2008.csv,Date,str,300,0,150,Date or datetime field.
+new-answers-per-month-since-2008.csv,Status,str,300,0,2,Dataset-specific field; inspect the paired query in data/metadata/queries.
+new-answers-per-month-since-2008.csv,NewAnswers,int64,300,0,262,"Answer count, answer status, or answer-related metric."
+new-question-activity-per-day-since-2008.csv,Date,str,3891,0,3891,Date or datetime field.
+new-question-activity-per-day-since-2008.csv,NewQuestions,int64,3891,0,133,"Question count, question status, or question-related metric."
+new-question-activity-per-month-since-2008.csv,Date,str,147,0,147,Date or datetime field.
+new-question-activity-per-month-since-2008.csv,NewQuestions,int64,147,0,136,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,Day,str,6499,0,6499,Daily time field or day-level aggregation.
+new-questions-per-day-by-sites-since-2008.csv,AiQuestions,int64,6499,0,21,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,AstronomyQuestions,int64,6499,0,20,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,ComputerGraphicsQuestions,int64,6499,0,13,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,ComputerScienceQuestions,int64,6499,0,31,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,CsEducatorsQuestions,int64,6499,0,12,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,CsTheoryQuestions,int64,6499,0,19,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,DataScienceQuestions,int64,6499,0,37,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,EarthScienceQuestions,int64,6499,0,18,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,EngineeringQuestions,int64,6499,0,19,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,GenAIQuestions,int64,6499,0,10,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,MathematicsQuestions,int64,6499,0,592,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,MathEducatorsQuestions,int64,6499,0,17,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,MathOverflowQuestions,int64,6499,0,55,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,PhysicsQuestions,int64,6499,0,98,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,QuantQuestions,int64,6499,0,21,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,QuantumComputingQuestions,int64,6499,0,18,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,RoboticsQuestions,int64,6499,0,37,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,ScientificComputingQuestions,int64,6499,0,15,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,StatisticsQuestions,int64,6499,0,100,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,TeXQuestions,int64,6499,0,103,"Question count, question status, or question-related metric."
+new-questions-per-day-by-sites-since-2008.csv,StackOverflowQuestions,int64,6499,0,4369,"Question count, question status, or question-related metric."
+tags-db.csv,Id,int64,2704,0,2704,Identifier used by the underlying Stack Exchange data model.
+tags-db.csv,TagName,str,2702,2,2702,Tag or tag-related attribute from Stack Exchange.
+tags-db.csv,Count,int64,2704,0,392,Number of records satisfying the corresponding condition.
+tags-db.csv,ExcerptPostId,float64,1740,964,1740,Identifier used by the underlying Stack Exchange data model.
+tags-db.csv,WikiPostId,float64,1740,964,1740,Identifier used by the underlying Stack Exchange data model.
+tags-db.csv,IsModeratorOnly,float64,0,2704,0,Dataset-specific field; inspect the paired query in data/metadata/queries.
+tags-db.csv,IsRequired,float64,0,2704,0,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-metrics-by-site-by-month-all-time.csv,Site,str,3280,0,21,Stack Exchange site or site-level identifier.
+user-metrics-by-site-by-month-all-time.csv,CreationMonth,str,3280,0,215,Monthly time field or month-level aggregation.
+user-metrics-by-site-by-month-all-time.csv,UsersCount,int64,3280,0,1768,"User identifier, count, cohort, or user-related metric."
+user-metrics-by-site-by-month-all-time.csv,DistinctNetworkAccounts,int64,3280,0,1775,Number of records satisfying the corresponding condition.
+user-metrics-by-site-by-month-all-time.csv,TotalReputation,int64,3280,0,3202,Aggregate total for the corresponding measure.
+user-metrics-by-site-by-month-all-time.csv,AvgReputation,float64,3280,0,3276,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-metrics-by-site-by-month-all-time.csv,MinReputation,int64,3280,0,1,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-metrics-by-site-by-month-all-time.csv,MaxReputation,int64,3280,0,2311,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-metrics-by-site-by-month-all-time.csv,StdReputation,float64,3280,0,3280,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-metrics-by-site-by-month-all-time.csv,TotalProfileViews,int64,3280,0,3014,Aggregate total for the corresponding measure.
+user-metrics-by-site-by-month-all-time.csv,AvgProfileViews,float64,3280,0,3267,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-metrics-by-site-by-month-all-time.csv,MinProfileViews,int64,3280,0,13,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-metrics-by-site-by-month-all-time.csv,MaxProfileViews,int64,3280,0,1618,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-metrics-by-site-by-month-all-time.csv,TotalUpVotesCast,int64,3280,0,2040,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,AvgUpVotesCast,float64,3280,0,3213,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,MinUpVotesCast,int64,3280,0,1,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,MaxUpVotesCast,int64,3280,0,1473,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,TotalDownVotesCast,int64,3280,0,922,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,AvgDownVotesCast,float64,3280,0,2413,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,MinDownVotesCast,int64,3280,0,1,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,MaxDownVotesCast,int64,3280,0,758,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,TotalVotesCast,int64,3280,0,2061,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,AvgVotesCast,float64,3280,0,3220,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,MinVotesCast,int64,3280,0,1,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,MaxVotesCast,int64,3280,0,1515,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,NetVotesCast,int64,3280,0,2002,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,AvgNetVotesCast,float64,3280,0,3222,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,MinNetVotesCast,int64,3280,0,437,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,MaxNetVotesCast,int64,3280,0,1442,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,UpvoteDownvoteRatio,float64,2571,709,2352,Vote count or vote-related attribute.
+user-metrics-by-site-by-month-all-time.csv,AvgAccountAgeDays,float64,3280,0,3280,Tag or tag-related attribute from Stack Exchange.
+user-metrics-by-site-by-month-all-time.csv,MinAccountAgeDays,int64,3280,0,233,Tag or tag-related attribute from Stack Exchange.
+user-metrics-by-site-by-month-all-time.csv,MaxAccountAgeDays,int64,3280,0,253,Tag or tag-related attribute from Stack Exchange.
+user-metrics-by-site-by-month-all-time.csv,AvgDaysSinceLastAccess,float64,3280,0,3280,Daily time field or day-level aggregation.
+user-metrics-by-site-by-month-all-time.csv,MinDaysSinceLastAccess,int64,3280,0,182,Daily time field or day-level aggregation.
+user-metrics-by-site-by-month-all-time.csv,MaxDaysSinceLastAccess,int64,3280,0,357,Daily time field or day-level aggregation.
+user-metrics-by-site-by-month-all-time.csv,UsersWithWebsite,int64,3280,0,671,"User identifier, count, cohort, or user-related metric."
+user-metrics-by-site-by-month-all-time.csv,UsersWithoutWebsite,int64,3280,0,1679,"User identifier, count, cohort, or user-related metric."
+user-metrics-by-site-by-month-all-time.csv,UsersWithAboutMe,int64,3280,0,901,"User identifier, count, cohort, or user-related metric."
+user-metrics-by-site-by-month-all-time.csv,UsersWithoutAboutMe,int64,3280,0,1606,"User identifier, count, cohort, or user-related metric."
+user-metrics-by-site-by-month-all-time.csv,UsersWithProfileImage,int64,3280,0,1,"User identifier, count, cohort, or user-related metric."
+user-metrics-by-site-by-month-all-time.csv,UsersWithoutProfileImage,int64,3280,0,1768,"User identifier, count, cohort, or user-related metric."
+user-metrics-by-site-by-month-all-time.csv,UsersWithNetworkAccount,int64,3280,0,1774,"User identifier, count, cohort, or user-related metric."
+user-metrics-by-site-by-month-all-time.csv,UsersWithoutNetworkAccount,int64,3280,0,119,"User identifier, count, cohort, or user-related metric."
+user-static-metrics-by-several-site-all-time.csv,Site,str,21,0,21,Stack Exchange site or site-level identifier.
+user-static-metrics-by-several-site-all-time.csv,UsersCount,int64,21,0,21,"User identifier, count, cohort, or user-related metric."
+user-static-metrics-by-several-site-all-time.csv,DistinctNetworkAccounts,int64,21,0,21,Number of records satisfying the corresponding condition.
+user-static-metrics-by-several-site-all-time.csv,TotalReputation,int64,21,0,21,Aggregate total for the corresponding measure.
+user-static-metrics-by-several-site-all-time.csv,AvgReputation,float64,21,0,21,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-static-metrics-by-several-site-all-time.csv,MinReputation,int64,21,0,1,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-static-metrics-by-several-site-all-time.csv,MaxReputation,int64,21,0,21,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-static-metrics-by-several-site-all-time.csv,TotalProfileViews,int64,21,0,21,Aggregate total for the corresponding measure.
+user-static-metrics-by-several-site-all-time.csv,AvgProfileViews,float64,21,0,21,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-static-metrics-by-several-site-all-time.csv,MinProfileViews,int64,21,0,1,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-static-metrics-by-several-site-all-time.csv,MaxProfileViews,int64,21,0,21,Dataset-specific field; inspect the paired query in data/metadata/queries.
+user-static-metrics-by-several-site-all-time.csv,TotalUpVotesCast,int64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,AvgUpVotesCast,float64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,MinUpVotesCast,int64,21,0,1,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,MaxUpVotesCast,int64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,TotalDownVotesCast,int64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,AvgDownVotesCast,float64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,MinDownVotesCast,int64,21,0,1,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,MaxDownVotesCast,int64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,TotalVotesCast,int64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,AvgVotesCast,float64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,MinVotesCast,int64,21,0,1,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,MaxVotesCast,int64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,NetVotesCast,int64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,AvgNetVotesCast,float64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,MinNetVotesCast,int64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,MaxNetVotesCast,int64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,UpvoteDownvoteRatio,float64,21,0,21,Vote count or vote-related attribute.
+user-static-metrics-by-several-site-all-time.csv,UsersWithWebsite,int64,21,0,21,"User identifier, count, cohort, or user-related metric."
+user-static-metrics-by-several-site-all-time.csv,UsersWithoutWebsite,int64,21,0,21,"User identifier, count, cohort, or user-related metric."
+user-static-metrics-by-several-site-all-time.csv,UsersWithAboutMe,int64,21,0,21,"User identifier, count, cohort, or user-related metric."
+user-static-metrics-by-several-site-all-time.csv,UsersWithoutAboutMe,int64,21,0,21,"User identifier, count, cohort, or user-related metric."
+user-static-metrics-by-several-site-all-time.csv,UsersWithProfileImage,int64,21,0,1,"User identifier, count, cohort, or user-related metric."
+user-static-metrics-by-several-site-all-time.csv,UsersWithoutProfileImage,int64,21,0,21,"User identifier, count, cohort, or user-related metric."
+user-static-metrics-by-several-site-all-time.csv,UsersWithNetworkAccount,int64,21,0,21,"User identifier, count, cohort, or user-related metric."
+user-static-metrics-by-several-site-all-time.csv,UsersWithoutNetworkAccount,int64,21,0,21,"User identifier, count, cohort, or user-related metric."
